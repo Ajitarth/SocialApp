@@ -22,7 +22,7 @@
             <div class="icon-container flex gap-3">
                 <a id="{{ post.id }}" class="btn-like">
                     {% if logged_user in post.liked_by.all %}
-                    <img class="w-5 h-5" src="{% static 'users/images/like.png' %}" alt="">
+                    <img class="w-5 h-5" src="{% static 'users/images/redlike.png' %}" alt="">
                     {% else %}
                     <img class="w-5 h-5" src="{% static 'users/images/whitelike.png' %}" alt="">
                     {% endif %}
