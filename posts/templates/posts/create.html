@@ -1,8 +1,27 @@
 {% extends 'users/base.html' %}
 {% block body %}
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Post.</button>
-</form>
+  <h2 class="text-2xl font-bold mb-6 mx-6">📸 Create A Post</h2>
+
+  <div class="container mx-auto my-8">
+    <form method="post" class="bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 w-4/5 mx-auto" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="title">Add Title</label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="title" type="text" placeholder="Enter a catchy title" name="title" required>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="image">Upload Image</label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="image" type="file" name="image" accept="image/*" required>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="caption">Add Caption</label>
+        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="caption" placeholder="Write an interesting caption" name="caption" required></textarea>
+      </div>
+
+      <button type="submit" class="bg-green-500 text-white my-5 px-6 py-2 rounded-full hover:bg-green-600 focus:outline-none focus:shadow-outline">Submit</button>
+    </form>
+  </div>
 {% endblock %}
