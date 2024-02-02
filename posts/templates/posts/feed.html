@@ -47,7 +47,7 @@
         </div>
         <div class="px-5 py-5">
             {% for comment in post.comments.all %}
-             <b>{{ comment.posted_by  }}</b> :{{ comment.body }}
+             <b>{{ comment.posted_by  }}</b> {{ comment.body }}
             </br>
             {% endfor %}
         </div>
