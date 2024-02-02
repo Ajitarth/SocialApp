@@ -1,3 +1,4 @@
+
 {% extends 'users/base.html' %}
 {% load mathfilters %}
 {% load static %}
@@ -47,7 +48,7 @@
         </div>
         <div class="px-5 py-5">
             {% for comment in post.comments.all %}
-             <b>{{ comment.posted_by  }}</b> {{ comment.body }}
+             <b>{{ comment.posted_by  }}</b> :{{ comment.body }}
             </br>
             {% endfor %}
         </div>
@@ -56,16 +57,16 @@
                 {% csrf_token %}
                 <div class="flex">
 
-                <div class="  border rounded  mr-10 text-grey-700">
-                    {{ comment_form.body  }}
-                </div>
-               
+                    <div class="  border rounded  mr-10 text-grey-700">
+                        {{ comment_form.body  }}
+                    </div>
+                
                     <input type="hidden" name="post_id" id="post_id" value="{{ post.id }}">
-                     <input type="hidden" name="posted_by" id="posted_by" value="{{ logged_user }}">
-              
+                    <input type="hidden" name="posted_by" id="posted_by" value="{{ logged_user }}">
+            
                 
                     <button class="bg-green-500 text-white px-5 py-2" type="submit">Add</button>
-                
+                    
 
                 </div>
                
@@ -91,5 +92,3 @@
     })
    </script>
 {% endblock %}
-
-
